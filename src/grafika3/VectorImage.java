@@ -31,11 +31,12 @@ public class VectorImage
 			if(charArr[i] == 'f')
 			{
 				StringBuilder sb = new StringBuilder();
-				char curr = ' ';
+				char next = ' ';
 				int j = 1;
-				while(curr != 'f' && curr != 'p' && i+j < formFile.length())
+				while(next != 'f' && next != 'p' && i+j < formFile.length())
 				{
 					sb.append(charArr[i+j]);
+					next = charArr[i+j+1];
 					j++;
 				}
 				addFigure(sb.toString());
@@ -44,11 +45,12 @@ public class VectorImage
 			if(charArr[i] == 'p')
 			{
 				StringBuilder sb = new StringBuilder();
-				char curr = ' ';
+				char next = ' ';
 				int j = 1;
-				while(curr != 'f' && curr != 'p' && i+j < formFile.length())
+				while(next != 'f' && next != 'p' && i+j < formFile.length())
 				{
 					sb.append(charArr[i+j]);
+					next = charArr[i+j+1];
 					j++;
 				}
 				addPolygon(sb.toString());
@@ -80,6 +82,7 @@ public class VectorImage
 				while(curr != 'f' && curr != 'p' && i+j < formFile.length())
 				{
 					sb.append(charArr[i+j]);
+					curr = charArr[i+j];
 					j++;
 				}
 				addFigure(sb.toString());
@@ -93,6 +96,7 @@ public class VectorImage
 				while(curr != 'f' && curr != 'p' && i+j < formFile.length())
 				{
 					sb.append(charArr[i+j]);
+					curr = charArr[i+j];
 					j++;
 				}
 				addPolygon(sb.toString());
