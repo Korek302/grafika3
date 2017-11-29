@@ -1,6 +1,5 @@
 package grafika3;
 
-import java.awt.Panel;
 import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 
