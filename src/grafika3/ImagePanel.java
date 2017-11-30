@@ -30,8 +30,8 @@ class ImagePanel extends JPanel implements ActionListener
     	trans = new JButton("Transformation");
     	
     	setLayout(null);
-    	normal.setBounds(590, 720, 90, 30);
-    	trans.setBounds(690, 720, 90, 30);
+    	normal.setBounds(490, 620, 90, 30);
+    	trans.setBounds(590, 620, 90, 30);
     	
     	add(normal);
     	add(trans);
