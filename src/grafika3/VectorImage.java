@@ -20,7 +20,7 @@ public class VectorImage
 		String formFile = null;
 		try 
 		{
-			formFile = readFile("vectorImage.txt");
+			formFile = readFile("res/vectorImage.txt");
 		} 
 		catch (IOException e) 
 		{
@@ -132,15 +132,6 @@ public class VectorImage
 	{
 		transform();
 		
-		/*for(Polygon p : polyListTrans)
-		{
-			System.out.println("///////");
-			for(int i = 0; i<p.xpoints.length; i++)
-			{
-				System.out.println(p.xpoints[i] + ", " + p.ypoints[i]);
-			}
-		}*/
-		
 		if(!polyListTrans.isEmpty())
 		{
 			for(Polygon p : polyListTrans)
@@ -156,22 +147,7 @@ public class VectorImage
 	
 	public void transform()
 	{
-		double[][] transMatrix = loadMatrix();/*new double[3][3];
-		for(int i = 0; i < transMatrix[0].length; i++)
-			for(int f = 0; f < transMatrix.length; f++)
-				transMatrix[i][f] = (double) 0;
-		
-		transMatrix[0][0] = (double) 1;
-		transMatrix[1][1] = (double) 1;
-		transMatrix[2][2] = (double) 1;
-		
-		transMatrix[2][0] = (double) 100;
-		transMatrix[2][1] = (double) 100;
-		
-		transMatrix[0][0] = (double) 0.707;
-		transMatrix[0][1] = (double) 0.707;
-		transMatrix[1][0] = (double) -0.707;
-		transMatrix[1][1] = (double) 0.707;*/
+		double[][] transMatrix = loadMatrix();
 		
 		ArrayList<int[]> currPoints;
 		ArrayList<int[]> newPoints;
@@ -223,7 +199,7 @@ public class VectorImage
 		String formFile = null;
 		try 
 		{
-			formFile = readFile("transMatrix.txt");
+			formFile = readFile("res/transMatrix.txt");
 		} 
 		catch (IOException e) 
 		{
@@ -373,7 +349,7 @@ public class VectorImage
 		}
 	}
 	
-	static String readFile(String path) throws IOException 
+	private String readFile(String path) throws IOException 
 	{
 		byte[] encoded = Files.readAllBytes(Paths.get(path));
 		return new String(encoded);
